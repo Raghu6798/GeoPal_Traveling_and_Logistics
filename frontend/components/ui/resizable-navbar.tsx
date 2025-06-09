@@ -328,7 +328,7 @@ export const NavbarLogo = () => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
     >
       <Image
-        src="https://cdn-user-icons.flaticon.com/203560/203560053/1749458190312.svg?token=exp=1749459094~hmac=c001f1e02f4d24996958b48ae4b24e71"
+        src="1749458190312.svg"
         alt="GeoPal Logo"
         width={70}
         height={70}
