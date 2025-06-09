@@ -1,18 +1,22 @@
-runtime: "container"
-startCommand:
-  type: "http"
-  configSchema:
-    type: "object"
-    required: ["orsApiKey"]
-    properties:
-      orsApiKey:
-        type: "string"
-        title: "ORS API Key"
-        description: "Your OpenRouteService API key for routing and geocoding services"
-  exampleConfig:
-    orsApiKey: "your-ors-api-key-here"
 build:
-  dockerfile: "Dockerfile"
-  dockerBuildPath: "."
-env:
-  PORT: "8000"
+  dockerfile: Dockerfile
+  dockerBuildPath: .
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - ORS_API_KEY
+    properties:
+      ORS_API_KEY:
+        type: string
+        description: API key for OpenRouteService
+  commandFunction: |
+    (config) => ({
+      command: 'python',
+      args: ['ors_mcp_server.py'],
+      env: {
+        ORS_API_KEY: config.ORS_API_KEY
+      }
+    })
