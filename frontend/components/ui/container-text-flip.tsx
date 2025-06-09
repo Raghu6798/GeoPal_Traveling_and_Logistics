@@ -60,12 +60,12 @@ export function ContainerTextFlip({
       transition={{ duration: animationDuration / 2000 }}
       className={cn(
         "relative inline-block rounded-lg pt-2 pb-3 text-center text-4xl font-bold md:text-7xl",
-        "bg-gradient-to-r from-green-500/10 to-emerald-600/10",
-        "text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600",
-        "shadow-[inset_0_-1px_rgba(16,185,129,0.1),inset_0_0_0_1px_rgba(16,185,129,0.1),_0_4px_8px_rgba(16,185,129,0.1)]",
-        "dark:bg-gradient-to-r dark:from-green-500/20 dark:to-emerald-600/20",
-        "dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-green-400 dark:to-emerald-500",
-        "dark:shadow-[inset_0_-1px_rgba(16,185,129,0.2),inset_0_0_0_1px_rgba(16,185,129,0.2),_0_4px_8px_rgba(16,185,129,0.2)]",
+        "bg-gradient-to-r from-blue-500/10 to-indigo-600/10",
+        "text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600",
+        "shadow-[inset_0_-1px_rgba(59,130,246,0.1),inset_0_0_0_1px_rgba(59,130,246,0.1),_0_4px_8px_rgba(59,130,246,0.1)]",
+        "dark:bg-gradient-to-r dark:from-blue-500/20 dark:to-indigo-600/20",
+        "dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-indigo-500",
+        "dark:shadow-[inset_0_-1px_rgba(59,130,246,0.2),inset_0_0_0_1px_rgba(59,130,246,0.2),_0_4px_8px_rgba(59,130,246,0.2)]",
         className,
       )}
       key={words[currentWordIndex]}

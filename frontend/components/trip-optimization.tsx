@@ -120,8 +120,8 @@ export default function TripOptimization() {
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
-              <div className="text-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                <div className="text-lg font-bold text-green-600">32%</div>
+              <div className="text-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                <div className="text-lg font-bold text-blue-600">32%</div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">Efficiency</div>
               </div>
               <div className="text-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
@@ -137,7 +137,7 @@ export default function TripOptimization() {
               </div>
               <div className="flex justify-between">
                 <span>Optimized Distance:</span>
-                <span className="font-semibold text-green-600">{optimizationResults.optimizedDistance}</span>
+                <span className="font-semibold text-blue-600">{optimizationResults.optimizedDistance}</span>
               </div>
               <div className="flex justify-between">
                 <span>Fuel Saved:</span>
@@ -145,7 +145,7 @@ export default function TripOptimization() {
               </div>
               <div className="flex justify-between">
                 <span>Cost Saved:</span>
-                <span className="font-semibold text-green-600">{optimizationResults.costSaved}</span>
+                <span className="font-semibold text-blue-600">{optimizationResults.costSaved}</span>
               </div>
             </div>
           </CardContent>

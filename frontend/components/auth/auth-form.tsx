@@ -78,7 +78,7 @@ export function AuthForm({ type }: AuthFormProps) {
               required
             />
           </div>
-          <Button type="submit" className="w-full" disabled={isLoading}>
+          <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white" disabled={isLoading}>
             {isLoading && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}
             {type === "login" ? "Sign In" : "Sign Up"}
           </Button>

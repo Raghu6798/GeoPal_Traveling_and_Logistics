@@ -499,7 +499,7 @@ async def get_isochrones(
 async def get_pois(
     coordinates: Tuple[float, float],
     buffer: int = 1000,
-    limit: int = 500,
+    limit: int = 100,
     filters: Optional[Dict[str, Any]] = None,
     ctx: Context = None
 ) -> Dict[str, Any]:

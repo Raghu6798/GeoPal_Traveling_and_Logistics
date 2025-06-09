@@ -57,20 +57,20 @@ export default function Footer() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-              Stay Updated
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              Ready to Transform Your Travel?
             </h3>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Get the latest updates on new features, travel insights, and optimization tips delivered to your inbox.
+            <p className="text-lg text-gray-300 mb-8 max-w-2xl">
+              Join thousands of travelers who have revolutionized their journey planning with our AI-powered platform.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
               <Input
+                type="email"
                 placeholder="Enter your email"
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-green-500"
+                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blue-500"
               />
-              <Button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 whitespace-nowrap">
+              <Button className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 whitespace-nowrap">
                 Subscribe
-                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </motion.div>
@@ -89,12 +89,12 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <div className="flex items-center space-x-3 mb-6">
-                <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-2 rounded-xl">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-2 rounded-xl">
                   <Navigation className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                    TravelAI
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                    GeoPal
                   </h2>
                   <p className="text-sm text-gray-400">Intelligent Travel Platform</p>
                 </div>
@@ -108,16 +108,16 @@ export default function Footer() {
               {/* Contact Info */}
               <div className="space-y-3 text-sm text-gray-400">
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-4 w-4 text-green-500" />
-                  <span>hello@travelai.com</span>
+                  <Mail className="h-4 w-4 text-blue-500" />
+                  <span>hello@geopal.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-4 w-4 text-green-500" />
+                  <Phone className="h-4 w-4 text-blue-500" />
                   <span>+1 (555) 123-4567</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-4 w-4 text-green-500" />
-                  <span>San Francisco, CA</span>
+                  <MapPin className="h-4 w-4 text-blue-500" />
+                  <span>London, UK</span>
                 </div>
               </div>
             </motion.div>
@@ -138,7 +138,7 @@ export default function Footer() {
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-green-400 transition-colors duration-200 text-sm"
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
                     >
                       {link.name}
                     </Link>
@@ -161,7 +161,7 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              © 2024 TravelAI. All rights reserved. Built with ❤️ for travelers worldwide.
+              © 2024 GeoPal. All rights reserved. Built with ❤️ for travelers worldwide.
             </motion.div>
 
             <motion.div
@@ -177,7 +177,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={social.label}

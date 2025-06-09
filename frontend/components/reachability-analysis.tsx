@@ -20,8 +20,9 @@ export default function ReachabilityAnalysis() {
 
   const transportModes = [
     { id: "driving", name: "Driving", icon: Car, color: "text-blue-600" },
-    { id: "walking", name: "Walking", icon: Navigation, color: "text-green-600" },
-    { id: "cycling", name: "Cycling", icon: Bike, color: "text-purple-600" },
+    { id: "walking", name: "Walking", icon: Navigation, color: "text-blue-600" },
+    { id: "cycling", name: "Cycling", icon: Bike, color: "text-blue-600" },
+    { id: "public", name: "Public Transit", icon: Bus, color: "text-blue-600" },
   ]
 
   const isochroneResults = [
@@ -192,9 +193,9 @@ export default function ReachabilityAnalysis() {
                     <div className="text-2xl font-bold text-blue-600">89.2</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">km² reachable</div>
                   </div>
-                  <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600">124K</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">population</div>
+                  <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                    <div className="text-2xl font-bold text-blue-600">124K</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">People Reached</div>
                   </div>
                   <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
                     <div className="text-2xl font-bold text-purple-600">287</div>

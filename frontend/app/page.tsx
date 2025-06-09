@@ -23,6 +23,10 @@ import {
   CheckCircle,
   Quote,
   HelpCircle,
+  Brain,
+  Activity,
+  Leaf,
+  Building2,
 } from "lucide-react"
 import Link from "next/link"
 import Footer from "@/components/footer"
@@ -30,6 +34,8 @@ import { PricingPlans } from "@/components/pricing/pricing-plans"
 import { FAQSection } from "@/components/pricing/faq-section"
 import { ContainerTextFlip } from "@/components/ui/container-text-flip"
 import { FlipWords } from "@/components/ui/flip-words"
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
+import { MCPFeaturesDropdown } from "@/components/ui/mcp-features-dropdown"
 
 export default function LandingPage() {
   const [activeSection, setActiveSection] = useState("hero")
@@ -50,52 +56,46 @@ export default function LandingPage() {
 
   const features = [
     {
-      icon: Route,
       title: "AI-Powered Route Optimization",
-      description:
-        "Advanced algorithms analyze millions of data points to find the most efficient routes, saving you time and fuel costs.",
-      color: "from-green-400 to-emerald-600",
-      stats: "32% faster routes",
+      description: "Advanced algorithms analyze traffic patterns, weather conditions, and real-time data to find the most efficient routes.",
+      icon: Brain,
+      stats: "30% faster routes",
+      color: "from-blue-400 to-blue-600",
     },
     {
-      icon: MapPin,
-      title: "Intelligent POI Discovery",
-      description:
-        "Discover hidden gems and popular destinations with our AI that understands your preferences and travel style.",
-      color: "from-emerald-400 to-teal-600",
-      stats: "10M+ locations",
-    },
-    {
-      icon: Clock,
-      title: "Real-Time Optimization",
-      description:
-        "Dynamic route adjustments based on live traffic, weather, and events to ensure you always take the best path.",
-      color: "from-teal-400 to-cyan-600",
+      title: "Real-Time Traffic Intelligence",
+      description: "Get live updates on traffic conditions, accidents, and road closures to make informed travel decisions.",
+      icon: Activity,
       stats: "99.9% accuracy",
-    },
-    {
-      icon: Target,
-      title: "Multi-Modal Planning",
-      description:
-        "Seamlessly combine walking, cycling, driving, and public transport for the most efficient journey possible.",
-      color: "from-cyan-400 to-blue-600",
-      stats: "5+ transport modes",
-    },
-    {
-      icon: Shield,
-      title: "Enterprise Security",
-      description:
-        "Bank-grade encryption and privacy protection ensure your travel data remains secure and confidential.",
       color: "from-blue-400 to-indigo-600",
-      stats: "SOC 2 compliant",
     },
     {
-      icon: Sparkles,
-      title: "Predictive Analytics",
-      description:
-        "Machine learning models predict optimal travel times and suggest the best departure windows for your trips.",
+      title: "Multi-Modal Transportation",
+      description: "Seamlessly combine walking, cycling, public transit, and driving for optimal journey planning.",
+      icon: Navigation,
+      stats: "5+ transport modes",
       color: "from-indigo-400 to-purple-600",
-      stats: "85% prediction accuracy",
+    },
+    {
+      title: "Predictive Analytics",
+      description: "Machine learning models predict travel times and suggest optimal departure times based on historical data.",
+      icon: TrendingUp,
+      stats: "85% accuracy",
+      color: "from-purple-400 to-blue-600",
+    },
+    {
+      title: "Points of Interest Discovery",
+      description: "Find nearby hotels, restaurants, attractions, and essential services with intelligent POI search.",
+      icon: Building2,
+      stats: "500K+ POIs",
+      color: "from-blue-400 to-teal-600",
+    },
+    {
+      title: "Collaborative Planning",
+      description: "Plan trips with friends and family, share routes, and coordinate travel schedules in real-time.",
+      icon: Users,
+      stats: "Unlimited sharing",
+      color: "from-teal-400 to-blue-600",
     },
   ]
 
@@ -108,58 +108,34 @@ export default function LandingPage() {
 
   const testimonials = [
     {
+      quote: "GeoPal reduced our delivery route planning time by 75% and cut fuel costs by 30%. The ROI was immediate and substantial.",
       name: "Sarah Chen",
-      role: "Logistics Manager",
-      company: "Global Shipping Co.",
-      image: "https://img.freepik.com/premium-photo/getting-some-fresh-air-shot-young-woman-standing-park_590464-5150.jpg?semt=ais_hybrid&w=740",
-      content:
-        "GeoPal reduced our delivery route planning time by 75% and cut fuel costs by 30%. The ROI was immediate and substantial.",
-      rating: 5,
+      title: "Logistics Manager, Global Shipping Co.",
     },
     {
+      quote: "As someone who travels 200+ days a year, GeoPal has become indispensable. It finds routes and places I never would have discovered.",
       name: "Marcus Rodriguez",
-      role: "Travel Blogger",
-      company: "Wanderlust Adventures",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwdHWCR9ZmtD0jmomnSGRSmnv0D_GL6kDeNA&s",
-      content:
-        "As someone who travels 200+ days a year, GeoPal has become indispensable. It finds routes and places I never would have discovered.",
-      rating: 5,
+      title: "Travel Blogger, Wanderlust Adventures",
     },
     {
+      quote: "The isochrone analysis and reachability features have revolutionized how we approach urban mobility research. Incredibly powerful.",
       name: "Dr. Emily Watson",
-      role: "Research Director",
-      company: "Urban Planning Institute",
-      image: "/placeholder.svg?height=60&width=60",
-      content:
-        "The isochrone analysis and reachability features have revolutionized how we approach urban mobility research. Incredibly powerful.",
-      rating: 5,
+      title: "Research Director, Urban Planning Institute",
     },
     {
+      quote: "Our fleet efficiency improved by 40% after implementing GeoPal. The vehicle routing optimization is simply outstanding.",
       name: "James Park",
-      role: "Fleet Operations",
-      company: "EcoDelivery",
-      image: "/placeholder.svg?height=60&width=60",
-      content:
-        "Our fleet efficiency improved by 40% after implementing GeoPal. The vehicle routing optimization is simply outstanding.",
-      rating: 5,
+      title: "Fleet Operations, EcoDelivery",
     },
     {
+      quote: "The API integration was seamless, and the results exceeded our expectations. Our users love the intelligent route suggestions.",
       name: "Lisa Thompson",
-      role: "Product Manager",
-      company: "TechStartup Inc.",
-      image: "/placeholder.svg?height=60&width=60",
-      content:
-        "The API integration was seamless, and the results exceeded our expectations. Our users love the intelligent route suggestions.",
-      rating: 5,
+      title: "Product Manager, TechStartup Inc.",
     },
     {
+      quote: "GeoPal's multi-modal planning has transformed our public transport recommendations. Passenger satisfaction is at an all-time high.",
       name: "David Kumar",
-      role: "Operations Director",
-      company: "City Transport",
-      image: "/placeholder.svg?height=60&width=60",
-      content:
-        "GeoPal's multi-modal planning has transformed our public transport recommendations. Passenger satisfaction is at an all-time high.",
-      rating: 5,
+      title: "Operations Director, City Transport",
     },
   ]
 
@@ -180,46 +156,43 @@ export default function LandingPage() {
   const heroWords = ["intelligent", "seamless", "personalized", "effortless"]
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Tracing Beam Effect */}
-      <motion.div
-        className="fixed top-0 left-0 w-[2px] h-[100px] bg-gradient-to-b from-emerald-900/0 via-emerald-900/80 to-emerald-900/0 blur-[1px] z-50"
-        style={{ 
-          y: beamY,
-          opacity: beamOpacity,
-          transform: `translateY(${beamY})`,
-        }}
-      />
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Enhanced Background Elements */}
+      <div className="fixed top-0 left-0 w-[2px] h-[100px] bg-gradient-to-b from-blue-900/0 via-blue-900/80 to-blue-900/0 blur-[1px] z-50" />
+      <div className="fixed top-0 right-0 w-[2px] h-[100px] bg-gradient-to-b from-blue-900/0 via-blue-900/80 to-blue-900/0 blur-[1px] z-50" />
+      <div className="fixed bottom-0 left-0 w-[2px] h-[100px] bg-gradient-to-b from-blue-900/0 via-blue-900/80 to-blue-900/0 blur-[1px] z-50" />
+      <div className="fixed bottom-0 right-0 w-[2px] h-[100px] bg-gradient-to-b from-blue-900/0 via-blue-900/80 to-blue-900/0 blur-[1px] z-50" />
 
-      {/* Aurora Gradient Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-white">
+      {/* Enhanced Aurora Gradient Background */}
+      <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-white">
         <motion.div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-100/40 via-emerald-50/20 to-transparent"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-indigo-50/20 to-transparent"
           style={{ y }}
         />
         <motion.div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-emerald-100/30 via-green-50/10 to-transparent"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-indigo-100/30 via-blue-50/10 to-transparent"
           style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]) }}
         />
       </div>
 
-      {/* Floating Elements */}
+      {/* Enhanced Floating Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-gradient-to-r from-green-200/10 to-emerald-200/10"
+            className="absolute rounded-full bg-gradient-to-r from-blue-200/10 to-indigo-200/10"
             style={{
-              width: Math.random() * 300 + 50,
-              height: Math.random() * 300 + 50,
+              width: Math.random() * 300 + 100,
+              height: Math.random() * 100 + 50,
               left: Math.random() * 100 + "%",
               top: Math.random() * 100 + "%",
+              filter: "blur(20px)",
             }}
             animate={{
               x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
-              scale: [1, 1.1, 1],
-              rotate: [0, 180, 360],
+              y: [0, Math.random() * 50 - 25],
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
             }}
             transition={{
               duration: Math.random() * 20 + 20,
@@ -230,57 +203,80 @@ export default function LandingPage() {
         ))}
       </div>
 
+      {/* Geometric Background Patterns */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
+        
+        {/* Floating Geometric Shapes */}
+        <motion.div
+          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-xl"
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 10, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
+        
+        <motion.div
+          className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-full blur-xl"
+          animate={{
+            y: [0, 15, 0],
+            x: [0, -15, 0],
+            scale: [1, 0.9, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
+        
+        <motion.div
+          className="absolute bottom-40 left-1/4 w-40 h-40 bg-gradient-to-r from-blue-300/15 to-cyan-300/15 rounded-full blur-xl"
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 20, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
+        
+        <motion.div
+          className="absolute bottom-20 right-1/3 w-28 h-28 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-xl"
+          animate={{
+            y: [0, 25, 0],
+            x: [0, -25, 0],
+            scale: [1, 0.8, 1],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
+      </div>
+
+      {/* Subtle Noise Texture */}
+      <div className="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZUZpbHRlciI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNCIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZUZpbHRlcikiIG9wYWNpdHk9IjAuMDIiLz48L3N2Zz4=')] opacity-20" />
+
       {/* Header */}
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-100"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-blue-100"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <motion.div className="flex items-center space-x-3" whileHover={{ scale: 1.05 }}>
-              <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-2 rounded-xl">
-                <Navigation className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                  GeoPal
-                </h1>
-                <p className="text-sm text-gray-600">Intelligent Travel Platform</p>
-              </div>
-            </motion.div>
-
-            <nav className="hidden md:flex items-center space-x-8">
-              {["Features", "About", "Pricing"].map((item, index) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-gray-600 hover:text-green-600 transition-colors font-medium"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.3 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {item}
-                </motion.a>
-              ))}
-            </nav>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              <Link href="/dashboard">
-                <Button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
+        {/* ... existing header content ... */}
       </motion.header>
 
       {/* Hero Section */}
@@ -295,15 +291,15 @@ export default function LandingPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   Transform Your Travel Experience with{" "}
                 </span>
                 <FlipWords
                   words={heroWords}
                   duration={2000}
-                  className="text-emerald-900 font-bold"
+                  className="text-indigo-900 font-bold"
                 />
-                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   {" "}Journey Planning
                 </span>
               </h1>
@@ -317,7 +313,7 @@ export default function LandingPage() {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg w-full sm:w-auto"
+                      className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg w-full sm:w-auto"
                     >
                       Start Free Trial
                       <ArrowRight className="ml-3 h-5 w-5" />
@@ -328,7 +324,7 @@ export default function LandingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-green-200 text-green-600 hover:bg-green-50 px-8 py-6 text-lg font-semibold rounded-xl w-full"
+                    className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-xl w-full"
                     onClick={() => scrollToSection('features')}
                   >
                     Explore Features
@@ -338,14 +334,34 @@ export default function LandingPage() {
               </div>
 
               {/* Trust Indicators */}
-            
+              <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500">
+                <div className="flex items-center space-x-2">
+                  <div className="flex -space-x-2">
+                    {[...Array(4)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 border-2 border-white"
+                      />
+                    ))}
+                  </div>
+                  <span>Trusted by 500K+ travelers</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                  <span>4.9/5 rating</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Shield className="h-4 w-4 text-green-500" />
+                  <span>99.9% uptime</span>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="relative z-10 py-32 bg-white/50 backdrop-blur-sm">
+      {/* Features Section with Enhanced Background */}
+      <section id="features" className="relative z-10 py-32 bg-white/30 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <motion.div
             className="text-center mb-20"
@@ -354,11 +370,11 @@ export default function LandingPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Badge className="mb-6 bg-green-100 text-green-700 border-green-200 px-4 py-2">
+            <Badge className="mb-6 bg-blue-100 text-blue-700 border-blue-200 px-4 py-2">
               <Target className="w-4 h-4 mr-2" />
               Powerful Features
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Built for the Future
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -367,7 +383,7 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -377,7 +393,7 @@ export default function LandingPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
-                <Card className="h-full bg-white/80 backdrop-blur-sm border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-xl group">
+                <Card className="h-full bg-white/80 backdrop-blur-sm border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl group">
                   <CardContent className="p-8">
                     <div
                       className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-r ${feature.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
@@ -386,7 +402,7 @@ export default function LandingPage() {
                     </div>
                     <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
                     <p className="text-gray-600 leading-relaxed mb-4">{feature.description}</p>
-                    <Badge variant="outline" className="text-green-600 border-green-200">
+                    <Badge variant="outline" className="text-blue-600 border-blue-200">
                       {feature.stats}
                     </Badge>
                   </CardContent>
@@ -394,11 +410,21 @@ export default function LandingPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* MCP Features Dropdown Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <MCPFeaturesDropdown />
+          </motion.div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="relative z-10 py-32">
+      {/* About Section with Enhanced Background */}
+      <section id="about" className="relative z-10 py-32 bg-gradient-to-br from-blue-50/50 to-indigo-50/50">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -407,11 +433,11 @@ export default function LandingPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Badge className="mb-6 bg-green-100 text-green-700 border-green-200 px-4 py-2">
+              <Badge className="mb-6 bg-blue-100 text-blue-700 border-blue-200 px-4 py-2">
                 <Sparkles className="w-4 h-4 mr-2" />
                 Our Mission
               </Badge>
-              <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Revolutionizing Travel Intelligence
               </h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
@@ -447,7 +473,7 @@ export default function LandingPage() {
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
                   >
-                    <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0" />
                     <span className="text-gray-700 font-medium">{item}</span>
                   </motion.div>
                 ))}
@@ -461,38 +487,38 @@ export default function LandingPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-8 text-white">
+              <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl p-8 text-white">
                 <h3 className="text-3xl font-bold mb-6">Our Impact</h3>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
                     <div className="text-4xl font-bold mb-2">10M+</div>
-                    <div className="text-green-100">Routes Optimized</div>
+                    <div className="text-blue-100">Routes Optimized</div>
                   </div>
                   <div className="text-center">
                     <div className="text-4xl font-bold mb-2">500K+</div>
-                    <div className="text-green-100">Happy Users</div>
+                    <div className="text-blue-100">Happy Users</div>
                   </div>
                   <div className="text-center">
                     <div className="text-4xl font-bold mb-2">30%</div>
-                    <div className="text-green-100">Time Saved</div>
+                    <div className="text-blue-100">Time Saved</div>
                   </div>
                   <div className="text-center">
                     <div className="text-4xl font-bold mb-2">40%</div>
-                    <div className="text-green-100">Cost Reduction</div>
+                    <div className="text-blue-100">Cost Reduction</div>
                   </div>
                 </div>
               </div>
 
               {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full opacity-20"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full opacity-20"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full opacity-20"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full opacity-20"></div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="relative z-10 py-32 bg-white/50 backdrop-blur-sm">
+      {/* Testimonials Section with Enhanced Background */}
+      <section id="testimonials" className="relative z-10 py-32 bg-white/40 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <motion.div
             className="text-center mb-20"
@@ -501,11 +527,11 @@ export default function LandingPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Badge className="mb-6 bg-green-100 text-green-700 border-green-200 px-4 py-2">
+            <Badge className="mb-6 bg-blue-100 text-blue-700 border-blue-200 px-4 py-2">
               <Users className="w-4 h-4 mr-2" />
               Customer Stories
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Loved by Thousands
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -513,50 +539,18 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <Card className="h-full bg-white/80 backdrop-blur-sm border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-xl">
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-
-                    <Quote className="h-8 w-8 text-green-600 mb-4 opacity-50" />
-
-                    <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.content}"</p>
-
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                        <div className="text-sm text-gray-600">{testimonial.role}</div>
-                        <div className="text-sm text-green-600 font-medium">{testimonial.company}</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+          <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white/80 backdrop-blur-sm items-center justify-center relative overflow-hidden border border-blue-100">
+            <InfiniteMovingCards
+              items={testimonials}
+              direction="right"
+              speed="slow"
+            />
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="relative z-10 py-32 bg-white/50 backdrop-blur-sm">
+      {/* Pricing Section with Enhanced Background */}
+      <section id="pricing" className="relative z-10 py-32 bg-gradient-to-br from-indigo-50/50 to-blue-50/50">
         <div className="container mx-auto px-6">
           <motion.div
             className="text-center mb-20"
@@ -565,11 +559,11 @@ export default function LandingPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Badge className="mb-6 bg-green-100 text-green-700 border-green-200 px-4 py-2">
+            <Badge className="mb-6 bg-blue-100 text-blue-700 border-blue-200 px-4 py-2">
               <TrendingUp className="w-4 h-4 mr-2" />
               Pricing Plans
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Choose Your Plan
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -581,8 +575,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="relative z-10 py-32 bg-white/50 backdrop-blur-sm">
+      {/* FAQ Section with Enhanced Background */}
+      <section id="faq" className="relative z-10 py-32 bg-white/40 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <motion.div
             className="text-center mb-20"
@@ -591,11 +585,11 @@ export default function LandingPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Badge className="mb-6 bg-green-100 text-green-700 border-green-200 px-4 py-2">
+            <Badge className="mb-6 bg-blue-100 text-blue-700 border-blue-200 px-4 py-2">
               <HelpCircle className="w-4 h-4 mr-2" />
               Frequently Asked Questions
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Got Questions?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -607,8 +601,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative z-10 py-32">
+      {/* CTA Section with Enhanced Background */}
+      <section className="relative z-10 py-32 bg-gradient-to-br from-blue-50/30 to-indigo-50/30">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -616,11 +610,11 @@ export default function LandingPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="max-w-5xl mx-auto bg-gradient-to-r from-green-500 to-emerald-600 border-0 text-white overflow-hidden relative">
+            <Card className="max-w-5xl mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 border-0 text-white overflow-hidden relative">
               <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
               <CardContent className="p-16 relative">
                 <h2 className="text-5xl md:text-6xl font-bold mb-8">Ready to Transform Your Travel?</h2>
-                <p className="text-xl mb-10 text-green-100 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-xl mb-10 text-blue-100 max-w-3xl mx-auto leading-relaxed">
                   Join thousands of travelers and businesses who have revolutionized their journey planning with
                   GeoPal. Start your free trial today and experience the future of travel intelligence.
                 </p>
@@ -629,7 +623,7 @@ export default function LandingPage() {
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                       <Button
                         size="lg"
-                        className="bg-white text-green-600 hover:bg-gray-50 px-10 py-6 text-lg font-semibold rounded-xl shadow-lg"
+                        className="bg-white text-blue-600 hover:bg-gray-50 px-10 py-6 text-lg font-semibold rounded-xl shadow-lg"
                       >
                         Start Free Trial
                         <ArrowRight className="ml-3 h-6 w-6" />
@@ -640,7 +634,7 @@ export default function LandingPage() {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="border-2 border-white/30 text-white hover:bg-white/10 px-10 py-6 text-lg font-semibold rounded-xl"
+                      className="bg-transparent border-2 border-white/50 text-white hover:bg-white/20 hover:border-white/70 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm"
                     >
                       Contact Sales
                       <Users className="ml-3 h-6 w-6" />

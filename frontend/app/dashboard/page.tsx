@@ -4,13 +4,14 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { MapPin, Route, Search, Clock, Star, Navigation, Calendar, Share2, ArrowLeft } from "lucide-react"
+import { MapPin, Route, Search, Clock, Star, Navigation, Calendar, Share2, ArrowLeft, Plus } from "lucide-react"
 import Link from "next/link"
 import TripDashboard from "@/components/trip-dashboard"
 import RouteExplorer from "@/components/route-explorer"
 import LocationIntelligence from "@/components/location-intelligence"
 import ReachabilityAnalysis from "@/components/reachability-analysis"
 import TripOptimization from "@/components/trip-optimization"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("dashboard")
@@ -25,10 +26,10 @@ export default function Dashboard() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-white">
       {/* Header with Navigation */}
       <motion.header
-        className="bg-white/80 backdrop-blur-md border-b border-green-200 sticky top-0 z-50"
+        className="bg-white/80 backdrop-blur-md border-b border-blue-200 sticky top-0 z-50"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -37,18 +38,18 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link href="/">
-                <Button variant="ghost" size="sm" className="text-green-600 hover:text-green-700">
+                <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-700">
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back
                 </Button>
               </Link>
 
               <div className="flex items-center space-x-3">
-                <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-2 rounded-lg">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-2 rounded-lg">
                   <Navigation className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                  <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                     TravelAI
                   </h1>
                   <p className="text-sm text-gray-600">Intelligent Travel Companion</p>
@@ -57,32 +58,19 @@ export default function Dashboard() {
             </div>
 
             {/* Quick Search */}
-            <div className="flex items-center space-x-4 max-w-md w-full">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <div className="flex items-center space-x-4">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                 <Input
-                  placeholder="Search destinations, routes, or POIs..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 bg-white/50 border-green-200 focus:border-green-400"
+                  placeholder="Search destinations, routes..."
+                  className="pl-10 w-80 bg-white/80 backdrop-blur-sm border-blue-200 focus:border-blue-400"
                 />
               </div>
               <Button
-                size="sm"
-                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+                className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
               >
-                <Search className="h-4 w-4" />
-              </Button>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <Button variant="outline" size="sm" className="border-green-200 text-green-600 hover:bg-green-50">
-                <Share2 className="h-4 w-4 mr-2" />
-                Share
-              </Button>
-              <Button variant="outline" size="sm" className="border-green-200 text-green-600 hover:bg-green-50">
-                <Star className="h-4 w-4 mr-2" />
-                Saved
+                <Plus className="h-4 w-4 mr-2" />
+                New Trip
               </Button>
             </div>
           </div>
@@ -91,7 +79,7 @@ export default function Dashboard() {
 
       {/* Navigation Tabs */}
       <motion.div
-        className="bg-white/60 backdrop-blur-sm border-b border-green-100"
+        className="bg-white/60 backdrop-blur-sm border-b border-blue-100"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
@@ -104,8 +92,8 @@ export default function Dashboard() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center space-x-2 px-4 py-3 rounded-lg transition-all duration-200 ${
                   activeTab === tab.id
-                    ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-md"
-                    : "text-gray-600 hover:text-green-600 hover:bg-green-50"
+                    ? "bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-md"
+                    : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

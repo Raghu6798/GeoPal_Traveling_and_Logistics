@@ -2,34 +2,18 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import MainNavbar from "@/components/navbar"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "TravelAI - Intelligent Travel Platform | AI-Powered Route Optimization",
-  description:
-    "Transform your travel planning with TravelAI's AI-powered platform. Optimize routes, discover POIs, and plan perfect trips with advanced algorithms and real-time intelligence.",
-  keywords: "travel AI, route optimization, travel planning, AI travel assistant, smart routing, travel intelligence",
-  authors: [{ name: "TravelAI Team" }],
-  creator: "TravelAI",
-  publisher: "TravelAI",
-  robots: "index, follow",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://travelai.com",
-    title: "TravelAI - Intelligent Travel Platform",
-    description: "AI-powered travel optimization and intelligent route planning for smarter journeys.",
-    siteName: "TravelAI",
+  title: "GeoPal-Where your odyssey begins",
+  description: "Plan your perfect trip with our AI-powered travel agent. Get personalized recommendations, real-time updates, and seamless booking experience.",
+  icons: {
+    icon: "https://cdn-user-icons.flaticon.com/203560/203560053/1749458190312.svg?token=exp=1749462162~hmac=1c1946c012d6bba51fa7e41d563443df",
+    shortcut: "https://cdn-user-icons.flaticon.com/203560/203560053/1749458190312.svg?token=exp=1749462162~hmac=1c1946c012d6bba51fa7e41d563443df",
+    apple: "https://cdn-user-icons.flaticon.com/203560/203560053/1749458190312.svg?token=exp=1749462162~hmac=1c1946c012d6bba51fa7e41d563443df",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "TravelAI - Intelligent Travel Platform",
-    description: "AI-powered travel optimization and intelligent route planning for smarter journeys.",
-    creator: "@travelai",
-  },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -46,11 +30,19 @@ export default function RootLayout({
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossOrigin=""
         />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="https://cdn-user-icons.flaticon.com/203560/203560053/1749458190312.svg?token=exp=1749462162~hmac=1c1946c012d6bba51fa7e41d563443df"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="https://cdn-user-icons.flaticon.com/203560/203560053/1749458190312.svg?token=exp=1749462162~hmac=1c1946c012d6bba51fa7e41d563443df"
+        />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        <MainNavbar />
+        {children}
       </body>
     </html>
   )

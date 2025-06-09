@@ -16,9 +16,16 @@ export default function TripDashboard() {
 
   const quickStats = [
     { label: "Active Trips", value: "3", icon: Calendar, color: "text-blue-600" },
-    { label: "Saved Locations", value: "24", icon: MapPin, color: "text-green-600" },
-    { label: "Total Distance", value: "2,847 km", icon: Clock, color: "text-purple-600" },
-    { label: "Est. Budget", value: "$4,250", icon: DollarSign, color: "text-orange-600" },
+    { label: "Saved Locations", value: "24", icon: MapPin, color: "text-blue-600" },
+    { label: "Total Distance", value: "2,847 km", icon: Clock, color: "text-blue-600" },
+    { label: "Est. Budget", value: "$4,250", icon: DollarSign, color: "text-blue-600" },
+  ]
+
+  const stats = [
+    { label: "Total Trips", value: "24", icon: Route, color: "text-blue-600" },
+    { label: "Saved Locations", value: "24", icon: MapPin, color: "text-blue-600" },
+    { label: "Time Saved", value: "12h", icon: Clock, color: "text-blue-600" },
+    { label: "Cost Saved", value: "£156", icon: DollarSign, color: "text-blue-600" },
   ]
 
   return (
@@ -141,7 +148,7 @@ export default function TripDashboard() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center">
-              <DollarSign className="h-5 w-5 mr-2 text-green-500" />
+              <DollarSign className="h-5 w-5 mr-2 text-blue-500" />
               Currency Rates
             </CardTitle>
           </CardHeader>
