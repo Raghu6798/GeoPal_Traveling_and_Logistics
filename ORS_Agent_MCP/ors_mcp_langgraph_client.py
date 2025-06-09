@@ -28,9 +28,12 @@ logger.add(
 )  # Save logs to file
 
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
-if not MISTRAL_API_KEY:
+logger.info(f"MISTRAL_API_KEY loaded: {'Yes' if MISTRAL_API_KEY else 'No'}")
+if MISTRAL_API_KEY:
+    logger.info(f"MISTRAL_API_KEY starts with: {MISTRAL_API_KEY[:10]}...")
+else:
     logger.error("MISTRAL_API_KEY environment variable not set.")
-    raise ValueError("OPENROUTER_API_KEY environment variable not set. Please set it in your .env file.")
+    raise ValueError("MISTRAL_API_KEY environment variable not set. Please set it in your .env file.")
 
 ORS_SERVER_PATH = os.path.join(os.path.dirname(__file__), "ors_mcp_server.py")
 
@@ -53,10 +56,12 @@ async def run_ors_agent():
     tools = await mcp_client.get_tools(server_name="ors")
     logger.debug(f"Loaded {len(tools)} tools: {[t.name for t in tools]}")
 
+    logger.info("Initializing Mistral AI model...")
     model = ChatMistralAI(
         model="mistral-medium-2505",
         api_key=MISTRAL_API_KEY
     )
+    logger.info("Mistral AI model initialized successfully")
     model_with_tools = model.bind_tools(tools)
 
     def call_model(state: AgentState):
