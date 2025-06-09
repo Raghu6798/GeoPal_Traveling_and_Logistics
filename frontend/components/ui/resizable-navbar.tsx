@@ -328,7 +328,7 @@ export const NavbarLogo = () => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
     >
       <Image
-        src="location.png"
+        src="/location.png"
         alt="GeoPal Logo"
         width={70}
         height={70}
