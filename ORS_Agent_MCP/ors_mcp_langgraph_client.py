@@ -58,7 +58,7 @@ async def run_ors_agent():
 
     logger.info("Initializing Mistral AI model...")
     model = ChatMistralAI(
-        model="mistral-medium-2505",
+        model="mistral-small-latest",
         api_key=MISTRAL_API_KEY
     )
     logger.info("Mistral AI model initialized successfully")
