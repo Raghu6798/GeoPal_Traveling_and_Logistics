@@ -35,7 +35,8 @@ else:
     logger.error("MISTRAL_API_KEY environment variable not set.")
     raise ValueError("MISTRAL_API_KEY environment variable not set. Please set it in your .env file.")
 
-ORS_SERVER_PATH = os.path.join(os.path.dirname(__file__), "ors_mcp_server.py")
+
+ORS_API_KEY=os.getenv("")
 
 class AgentState(TypedDict):
     messages: Annotated[List[BaseMessage], add_messages]
@@ -44,16 +45,15 @@ async def run_ors_agent():
     logger.info("Initializing ORS FastMCP server connection...")
     mcp_client = MultiServerMCPClient(
         {
-            "ors": {
-                "command": "python",
-                "args": [ORS_SERVER_PATH],
-                "transport": "stdio",
-            }
+           "geo_pal": {
+            "url": "https://server.smithery.ai/@Raghu6798/geopal_traveling_and_logistics/mcp?api_key=e3b06a92-b690-4c3a-9e46-fa480791e61b&profile=cognitive-weasel-8FCgUK",
+            "transport": "streamable_http",
+        }
         }
     )
 
     logger.info("Loading ORS tools from FastMCP server...")
-    tools = await mcp_client.get_tools(server_name="ors")
+    tools = await mcp_client.get_tools(server_name="geo_pal")
     logger.debug(f"Loaded {len(tools)} tools: {[t.name for t in tools]}")
 
     logger.info("Initializing Mistral AI model...")
